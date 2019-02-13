@@ -12,4 +12,11 @@ describe("test todo reducer", () => {
         const newState = TodoReducer(Initial_State,action)
         expect(newState).toEqual({...Initial_State, array:[text]})
     })
+    test("accpet Todo.FAILED_TO_ADD_TODO", () => {
+        const error = "this is error"
+        const action = {type:Todo.FAILED_TO_ADD_TODO, payload:error}
+        deepFreeze(action)
+        const newState = TodoReducer(Initial_State, action)
+        expect(newState).toEqual({...Initial_State, error})
+    })
 })

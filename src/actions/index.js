@@ -11,3 +11,14 @@ export const addTodo = text => (
         payload:text
     }
 )
+
+/**
+ * @function
+ * @returns {object} 
+ */
+export const failTodo = (err) => (
+    {
+        type:Todo.FAILED_TO_ADD_TODO,
+        payload:err
+    }
+)

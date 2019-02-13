@@ -10,4 +10,11 @@ describe("correct action testing", () => {
         expect(todoAction.type).toBe(Todo.ADD_TODO)
         expect(todoAction.payload).toBe(text)
     })
+
+
+    test("fail todo", () => {
+        const err = "it failed to add todo"
+        const todoAction = Action.failTodo(err)
+        expect(todoAction).toEqual({type:Todo.FAILED_TO_ADD_TODO, payload:err})
+    })
 })

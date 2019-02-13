@@ -16,6 +16,8 @@ export default (state = Initial_State, action) => {
     switch (action.type){
         case Todo.ADD_TODO:
         return {...state, array:[...state.array, action.payload]}
+        case Todo.FAILED_TO_ADD_TODO:
+        return {...state, error:action.payload}
         default:
         return state;
     }
